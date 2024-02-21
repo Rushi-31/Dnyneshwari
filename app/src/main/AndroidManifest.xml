@@ -12,7 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dyneshwari"
         tools:targetApi="31">
-      <activity
+        <activity
+            android:name=".AartiActivity"
+            android:exported="false"
+            android:label="@string/title_activity_aarti"
+            android:theme="@style/Theme.Dyneshwari" />
+        <activity
+            android:name=".ui.AartiActivity"
+            android:exported="false"
+            android:label="@string/title_activity_aarti"
+            android:theme="@style/Theme.Dyneshwari" />
+        <activity
             android:name=".PdfActivity"
             android:exported="false"
             android:label="@string/title_activity_pdf"

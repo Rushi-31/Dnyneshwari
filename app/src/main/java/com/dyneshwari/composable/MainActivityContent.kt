@@ -1,6 +1,7 @@
 package com.dyneshwari.composable
 
 import android.annotation.SuppressLint
+import androidx.annotation.RestrictTo
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
@@ -30,6 +32,7 @@ import androidx.navigation.NavHostController
 import com.dyneshwari.R
 import com.dyneshwari.data.krutidevfontFamily
 import com.dyneshwari.nav.NavItem
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -48,8 +51,7 @@ fun MainActivityContent(navController: NavHostController) {
 
         ModalNavigationDrawer(
             drawerContent = {
-                DrawerContent(navController)
-
+                DrawerContent(navController,drawerState,scope)
             },
             drawerState = drawerState
         ) {
@@ -61,11 +63,9 @@ fun MainActivityContent(navController: NavHostController) {
                         }
                     }){
 
+
                     }
                 },
-//                bottomBar = {
-////                    BottomAppBar { BottomNavigationBar(navController = navController) }
-//                },
                 content = {
                     NavigationScreens(navController = navController)
                 })
@@ -79,12 +79,14 @@ fun MainActivityContent(navController: NavHostController) {
 @Composable
 fun DrawerContent(
 
-  navController: NavHostController
+  navController: NavHostController,
+  drawerState: DrawerState,
+  scope: CoroutineScope
 
 ) {
 
-    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val scope = rememberCoroutineScope()
+
+
 
     val navItems = listOf(  NavItem.Adhayay,NavItem.Aarti, NavItem.Pasaydaan)
     var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
@@ -119,7 +121,7 @@ fun DrawerContent(
         }
 
         Spacer(modifier = Modifier.height(30.dp))
-//        BottomNavigationBar(navController = navController)
+
         navItems.forEachIndexed { index, item ->
             NavigationDrawerItem(
                 label = {
@@ -137,12 +139,13 @@ fun DrawerContent(
                             popUpTo(route) { saveState = true }
                         }
                         launchSingleTop = true
-                        restoreState = true // Update the value of mutable state
+                        restoreState = true
                     }
-                    // Close the drawer after navigating
+
                     scope.launch {
                         drawerState.close()
                     }
+
                 }
             )
 

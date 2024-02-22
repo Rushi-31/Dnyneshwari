@@ -32,17 +32,17 @@ import com.dyneshwari.ui.theme.Orange
 
 
 @SuppressLint("SuspiciousIndentation")
-//@Preview
-    @Composable
+
+@Composable
 @Preview
     fun AdhayayList(
 
     )
 
-//
-//
+
     {
-//    val pdfList = (1..18).map { "adhayay$it.pdf" }
+    val pdfList = (1..18).map { "adhayay$it.pdf" }
+
     val context = LocalContext.current
         LazyColumn(
             modifier = Modifier
@@ -69,7 +69,9 @@ import com.dyneshwari.ui.theme.Orange
                     onClick = {
                         // Handle click event to open PDF here
                         val intent = Intent(context, PdfActivity::class.java).apply {
-//                            putExtra("pdfPath", pdfPath)
+                           var pdfPath= pdfList[index]
+                            putExtra("pdfPath", pdfPath)
+
                         }
                         context.startActivity(intent)
                     }

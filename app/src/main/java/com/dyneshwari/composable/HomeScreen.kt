@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.dyneshwari.AboutActivity
 import com.dyneshwari.PdfActivity
 import com.dyneshwari.data.adhyayas
 import com.dyneshwari.data.krutidevfontFamily
@@ -88,10 +89,11 @@ fun ToolBar(
     title: String,
     onNavigationClick: () -> Unit,
 
-//    onSettingClick: () -> Unit
+
 
 ) {
     var expanded by remember { mutableStateOf(false) }
+    var context = LocalContext.current
 
     TopAppBar(
         // Customize Colors here
@@ -129,11 +131,14 @@ fun ToolBar(
                 )
                 DropdownMenu(expanded = expanded, onDismissRequest = {
                     expanded = false
+
                 }) {
                     Text(text = "About Us",
                         modifier = Modifier.clickable {
                             expanded = false
-//                                navController.navigate("about")
+                            val intent = Intent(context, AboutActivity::class.java)
+                            context.startActivity(intent)
+
                         })
                 }
 

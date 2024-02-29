@@ -1,5 +1,6 @@
 package com.dyneshwari.nav
 
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.res.painterResource
 import com.dyneshwari.R
 import com.dyneshwari.data.NavigationItem
@@ -33,6 +34,13 @@ sealed class NavItem {
             padding = 10,
 
         )
-
+object About:
+        Item(
+            path = NavPath.ABOUT.toString(),
+            title =" ",
+            selectedIcon = R.drawable.pandurang,
+            size = 35,
+            padding = 10
+        )
 
 }

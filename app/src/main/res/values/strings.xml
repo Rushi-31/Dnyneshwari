@@ -2,5 +2,6 @@
     <string name="app_name">Dyneshwari</string>
     <string name="title_activity_pdf">PdfActivity</string>
     <string name="title_activity_aarti">AartiActivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
 
 </resources>

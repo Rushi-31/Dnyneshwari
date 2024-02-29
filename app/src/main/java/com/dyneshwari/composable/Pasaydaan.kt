@@ -12,6 +12,7 @@
     import androidx.compose.foundation.layout.width
     import androidx.compose.foundation.shape.CircleShape
     import androidx.compose.foundation.shape.RoundedCornerShape
+    import androidx.compose.material3.Divider
     import androidx.compose.material3.MaterialTheme
     import androidx.compose.material3.Surface
     import androidx.compose.material3.Text
@@ -45,12 +46,13 @@
                    .border(1.dp, color = Color.Black, shape = RoundedCornerShape(50.dp))
                    .width(350.dp)
                    .height(750.dp)
-                   ,
 
 
 
 ){
-           Column(modifier = Modifier.fillMaxWidth().padding(15.dp)) {
+           Column(modifier = Modifier
+               .fillMaxWidth()
+               .padding(15.dp)) {
 
                Text(
                    text = "पसायदान",
@@ -63,8 +65,8 @@
                )
 
 
-               Spacer(modifier = Modifier.height(25.dp))
-
+               Spacer(modifier = Modifier.height(20.dp))
+//               Divider()
                Text(
                    text = "आतां विश्वात्मके देवे, येणे वाग्यज्ञे तोषावे,\n" +
                            "तोषोनि मज द्यावे, पसायदान हे AA१AA\n" +

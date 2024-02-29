@@ -1,5 +1,5 @@
 package com.dyneshwari.nav
 
 enum class NavPath {
-    AARTI ,ADHAYAYS,PASAYDAAN
+    AARTI ,ADHAYAYS,PASAYDAAN,ABOUT
 }

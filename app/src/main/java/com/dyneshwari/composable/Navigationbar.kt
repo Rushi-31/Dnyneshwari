@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.dyneshwari.AboutUs
 import com.dyneshwari.nav.NavItem
 
 
@@ -13,5 +14,6 @@ fun NavigationScreens(navController: NavHostController) {
         composable(NavItem.Adhayay.path) { AdhayayList() }
         composable(NavItem.Aarti.path) { Aarti()}
         composable(NavItem.Pasaydaan.path) { Pasaydaan() }
+        composable(NavItem.About.path) { AboutUs() }
     }
 }

@@ -3,12 +3,4 @@
 
     <style name="Theme.Dyneshwari" parent="android:Theme.Material.Light.NoActionBar" />
 
-    <style name="Theme.Dyneshwari.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.Dyneshwari.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Dyneshwari.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

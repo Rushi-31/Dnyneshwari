@@ -12,16 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dyneshwari"
         tools:targetApi="31">
-        <activity
-            android:name=".AartiActivity"
-            android:exported="false"
-            android:label="@string/title_activity_aarti"
-            android:theme="@style/Theme.Dyneshwari" />
-        <activity
-            android:name=".ui.AartiActivity"
-            android:exported="false"
-            android:label="@string/title_activity_aarti"
-            android:theme="@style/Theme.Dyneshwari" />
+
         <activity
             android:name=".PdfActivity"
             android:exported="false"
@@ -30,7 +21,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Dyneshwari">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,5 +29,13 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"
+        tools:ignore="ManifestOrder" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
 </manifest>

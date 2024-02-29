@@ -1,7 +1,6 @@
 package com.dyneshwari.composable
 
 import android.annotation.SuppressLint
-import androidx.annotation.RestrictTo
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +33,7 @@ import com.dyneshwari.data.krutidevfontFamily
 import com.dyneshwari.nav.NavItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import kotlin.math.exp
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -57,14 +57,15 @@ fun MainActivityContent(navController: NavHostController) {
         ) {
             Scaffold(
                 topBar = {
-                    ToolBar(title = "     श्री ज्ञानेश्वरी", onNavigationClick = {
-                        scope.launch {
-                            drawerState.open()
-                        }
-                    }){
+                    ToolBar(
+                        title = "     श्री ज्ञानेश्वरी",
 
-
-                    }
+                        onNavigationClick = {
+                            scope.launch {
+                                drawerState.open()
+                            }
+                        },
+                    )
                 },
                 content = {
                     NavigationScreens(navController = navController)
@@ -89,7 +90,7 @@ fun DrawerContent(
 
 
     val navItems = listOf(  NavItem.Adhayay,NavItem.Aarti, NavItem.Pasaydaan)
-    var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
+    var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
 
     ModalDrawerSheet {
         Column(

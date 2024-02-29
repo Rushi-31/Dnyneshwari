@@ -18,6 +18,7 @@
     import androidx.compose.runtime.Composable
     import androidx.compose.ui.Alignment
     import androidx.compose.ui.Modifier
+    import androidx.compose.ui.graphics.Color
     import androidx.compose.ui.text.font.FontWeight
     import androidx.compose.ui.text.style.TextAlign
     import androidx.compose.ui.text.style.TextDecoration
@@ -41,8 +42,10 @@
                Spacer(modifier = Modifier.height(40.dp))
                Box(  modifier = Modifier
 
-                   .border(2.dp, color = Orange, shape = RoundedCornerShape(30.dp))
-                   .width(350.dp),
+                   .border(1.dp, color = Color.Black, shape = RoundedCornerShape(50.dp))
+                   .width(350.dp)
+                   .height(750.dp)
+                   ,
 
 
 
@@ -60,7 +63,7 @@
                )
 
 
-               Spacer(modifier = Modifier.height(20.dp))
+               Spacer(modifier = Modifier.height(25.dp))
 
                Text(
                    text = "आतां विश्वात्मके देवे, येणे वाग्यज्ञे तोषावे,\n" +

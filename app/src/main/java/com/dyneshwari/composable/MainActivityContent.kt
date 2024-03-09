@@ -88,7 +88,7 @@ fun DrawerContent(
 
 
 
-
+    var red = MaterialTheme.colorScheme.primary
     val navItems = listOf(  NavItem.Adhayay,NavItem.Aarti, NavItem.Pasaydaan)
     var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
 
